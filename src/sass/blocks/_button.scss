@@ -1,0 +1,19 @@
+.btn {
+  width: 160px;
+  height: 45px;
+  border-radius: 25px;
+  background-color: $main-color;
+  border: unset;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  &__long {
+    display: block;
+    margin: 32px auto 0 auto;
+    width: 230px;
+    height: 57px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}

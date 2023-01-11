@@ -1,0 +1,68 @@
+.promo {
+  min-height: 680px;
+  padding: 20px 0 80px 0;
+  background: url(../img/main_bg-min.jpg) center center/cover no-repeat;
+  color: #fff;
+  &__desc {
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+  }
+  &__title {
+    font-family: "Roboto Condensed";
+    font-size: 72px;
+    font-weight: 700;
+    text-align: center;
+    color: $main-color;
+    margin: 15px 0 0 0;
+  }
+  &__subtitle {
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+  }
+  &__devider {
+    width: 810px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px auto 0 auto;
+  }
+  &__line {
+    width: 48%;
+    height: 1px;
+    background-color: #fff;
+  }
+  &__circle {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 100%;
+  }
+  &__items {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 280px;
+    text-align: center;
+    padding: 10px;
+  }
+  &__img {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & img {
+        max-height: 100%;
+    }
+  }
+  &__text {
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.38;
+    text-align: center;
+  }
+}
