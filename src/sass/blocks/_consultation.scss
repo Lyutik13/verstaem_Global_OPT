@@ -1,4 +1,5 @@
 .consultation {
+  position: relative;
   min-height: 300px;
   padding-bottom: 50px;
   &__title {
@@ -29,50 +30,7 @@
     z-index: 10;
   }
   &__form {
-    position: relative;
-    display: flex;
-    justify-content: center;
     margin-top: 70px;
-    & input {
-      width: 268px;
-      height: 45px;
-      padding: 0 20px;
-      border: solid 1px rgba(0, 0, 0, 0.21);
-      background-color: #fff;
-      border-radius: 25px;
-      font-size: 13px;
-      font-weight: 300;
-      line-height: 1.85;
-      text-align: left;
-      margin-right: 5px;
-      &:nth-child(4) {
-        margin-right: 0;
-      }
-    }
-  }
-  &__policy {
-    position: absolute;
-    left: 71%;
-    top: 132%;
-    display: flex;
-    align-items: center;
-    input {
-      width: inherit;
-      height: inherit;
-    }
-    span {
-      margin-left: 10px;
-      font-size: 13px;
-      font-weight: 300;
-      line-height: 1.85;
-      color: rgb(119, 117, 117);
-      a {
-        text-decoration: none;
-        &:hover {
-          color: $main-color;
-        }
-      }
-    }
   }
   &__btn {
     position: absolute;
@@ -86,11 +44,15 @@
     background-color: #fff;
     z-index: 5;
     &-daun {
-      top: 205%;
+      top: 99%;
+      left: 50%;
+      transform: translateX(-50%);
     }
     &-up {
       width: 122px;
-      top: -162%;
+      top: -2%;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
