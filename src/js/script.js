@@ -119,3 +119,22 @@ document.addEventListener("DOMContentLoaded", function () {
 //   };
 //   req.send(new FormData(event.target));
 // }
+
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  rewind: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 0,
+    stretch: -200,
+    depth: 500,
+    modifier: 1.4,
+    slideShadows: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
