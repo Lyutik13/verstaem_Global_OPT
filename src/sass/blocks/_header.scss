@@ -54,6 +54,7 @@
     line-height: 1.71;
     text-align: right;
     margin-right: 20px;
+    color: #fff;
   }
   &__phone {
     text-decoration: none;
@@ -62,6 +63,7 @@
     line-height: 1.26;
     margin-right: 20px;
     transition: all 0.4s;
+    color: #fff;
     &:hover {
       color: $main-color;
     }

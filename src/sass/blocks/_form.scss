@@ -72,7 +72,7 @@
     cursor: pointer;
     &::before {
       content: "";
-      width: 16px;
+      min-width: 16px;
       height: 16px;
       background-color: #fff;
       border-radius: 4px;
@@ -81,7 +81,7 @@
     &::after {
       transition: transform 0.5s ease 0s;
       content: "";
-      width: 10px;
+      min-width: 10px;
       height: 10px;
       position: absolute;
       left: 3px;

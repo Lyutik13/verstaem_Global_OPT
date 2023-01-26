@@ -41,6 +41,11 @@
   position: relative;
   max-width: 600px;
   max-height: 250px;
+  filter: blur(2px);
+}
+
+.swiper-slide-active {
+  filter: blur(0px);
 }
 
 .swiper-button-prev {
