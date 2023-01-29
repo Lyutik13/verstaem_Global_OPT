@@ -13,10 +13,46 @@
     }
   }
 }
+@media (min-width: 992px) {
+  .hamburger {
+    display: none;
+  }
+}
 
 @media (max-width: 992px) {
   .container {
     max-width: 768px;
+  }
+  .header {
+    justify-content: space-around;
+    &__nav {
+      display: none;
+    }
+    &__logo {
+      max-width: 80px;
+    }
+    &__contakts {
+      flex-direction: unset;
+    }
+  }
+  .promo {
+    min-height: 595px;
+    padding-bottom: 50px;
+    &__title {
+      font-size: 58px;
+    }
+    &__desc {
+      font-size: 20px;
+    }
+    &__subtitle {
+      font-size: 32px;
+    }
+    &__devider {
+      width: 100%;
+    }
+    &__text {
+      font-size: 11px;
+    }
   }
 }
 
@@ -24,10 +60,99 @@
   .container {
     max-width: 576px;
   }
+  .header {
+    height: 80px;
+    &__contakts {
+      flex-direction: column;
+    }
+  }
+  .promo {
+    &__title {
+      font-size: 42px;
+    }
+    &__desc {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    &__subtitle {
+      font-size: 24px;
+    }
+    &__text {
+      font-size: 11px;
+    }
+    &__items {
+      flex-wrap: wrap;
+    }
+    &__item {
+      width: 250px;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .promoSwiper {
+    display: none;
+  }
 }
 
 @media (max-width: 576px) {
   .container {
     width: 100%;
+  }
+  .menu {
+    &__block {
+      width: 260px;
+    }
+    &__link {
+      font-size: 20px;
+      &::before {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+  .header {
+    min-height: 180px;
+    flex-direction: column;
+    &__phone {
+      margin-right: 0;
+    }
+  }
+  .promo {
+    &__title {
+      font-size: 32px;
+    }
+    &__desc {
+      font-size: 13px;
+    }
+    &__subtitle {
+      font-size: 13px;
+    }
+    &__text {
+      font-size: 11px;
+    }
+    &__items {
+      flex-wrap: wrap;
+    }
+    &__item {
+      width: 250px;
+    }
+    &__line {
+      width: 46%;
+    }
+    &__items {
+      justify-content: center;
+    }
+    &__items {
+      display: none;
+    }
+    &__item {
+      margin: 0 auto;
+    }
+  }
+  .btn {
+    &__long {
+      margin: 20px auto 0 auto;
+    }
   }
 }

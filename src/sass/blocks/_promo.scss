@@ -3,13 +3,14 @@
   padding: 20px 0 80px 0;
   background: url(../img/main_bg-min.jpg) center center/cover no-repeat;
   color: #fff;
-  &__desc {margin-top: 5px;
+  &__desc {
+    margin-top: 5px;
     font-size: 24px;
     font-weight: 300;
     text-align: center;
   }
   &__title {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 72px;
     font-weight: 700;
     text-align: center;
@@ -17,7 +18,7 @@
     margin: 10px 0 0 0;
   }
   &__subtitle {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     font-size: 42px;
     font-weight: 400;
     text-align: center;
@@ -56,7 +57,7 @@
     align-items: center;
     justify-content: center;
     & img {
-        max-height: 100%;
+      max-height: 100%;
     }
   }
   &__text {
@@ -66,4 +67,12 @@
     line-height: 1.38;
     text-align: center;
   }
+}
+
+.promoSwiper {
+  padding-bottom: 30px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $main-color;
 }

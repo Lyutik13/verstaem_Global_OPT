@@ -138,3 +138,14 @@ var swiper = new Swiper(".mySwiper", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+var swiper = new Swiper(".promoSwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  rewind: true,
+});
