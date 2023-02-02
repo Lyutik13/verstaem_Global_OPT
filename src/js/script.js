@@ -137,9 +137,15 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  autoplay: {
+    delay: 8000,
+    disableOnInteraction: false,
+  },
 });
 
 var swiper = new Swiper(".promoSwiper", {
+  autoHeight: true,
+  rewind: true,
   pagination: {
     el: ".swiper-pagination",
   },
@@ -147,5 +153,4 @@ var swiper = new Swiper(".promoSwiper", {
     delay: 3000,
     disableOnInteraction: false,
   },
-  rewind: true,
 });

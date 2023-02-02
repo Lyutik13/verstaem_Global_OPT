@@ -44,13 +44,13 @@
     background-color: #fff;
     z-index: 5;
     &-daun {
-      top: 99%;
+      bottom: -3px;
       left: 50%;
       transform: translateX(-50%);
     }
     &-up {
       width: 122px;
-      top: -2%;
+      top: -3px;
       left: 50%;
       transform: translateX(-50%);
     }

@@ -1,5 +1,5 @@
 .feedback {
-  min-height: 470px;
+  min-height: 400px;
   padding: 50px 0;
 }
 
@@ -28,7 +28,7 @@
   }
   &__text {
     margin-top: 5px;
-    height: 90px;
+    min-height: 90px;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.57;
@@ -40,7 +40,7 @@
 .swiper-slide {
   position: relative;
   max-width: 600px;
-  max-height: 250px;
+  min-height: 250px;
   filter: blur(2px);
 }
 
@@ -50,15 +50,17 @@
 
 .swiper-button-prev {
   position: absolute;
-  top: 33%;
-  left: 43%;
+  top: 31%;
+  left: 50%;
+  transform: translateX(-350%);
   color: $main-color;
 }
 
 .swiper-button-next {
   position: absolute;
-  top: 33%;
-  right: 43%;
+  top: 31%;
+  right: 50%;
+  transform: translateX(350%);
   color: $main-color;
 }
 

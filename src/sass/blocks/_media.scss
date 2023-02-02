@@ -12,9 +12,28 @@
       display: none;
     }
   }
+  .advantage {
+    &__wrapper {
+      max-width: 394px;
+    }
+  }
   .about {
     &__wrapper {
       justify-content: center;
+    }
+  }
+  .consultation {
+    &__wrapper {
+      height: 200px;
+    }
+    &__btn {
+      top: 233%;
+    }
+  }
+  .form {
+    &__policy {
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -93,6 +112,27 @@
       width: 40px;
     }
   }
+  .form {
+    &__input {
+      width: 230px;
+    }
+  }
+  .company {
+    min-height: 297px;
+    &__desc {
+      font-size: 18px;
+    }
+    &__text {
+      font-size: 14px;
+    }
+    &__circle {
+      width: 80px;
+      height: 80px;
+    }
+    &__img {
+      width: 40px;
+    }
+  }
 }
 
 @media (max-width: 768px) {
@@ -156,6 +196,96 @@
   .about {
     &__wrapper {
       justify-content: center;
+    }
+  }
+  .price {
+    &__item {
+      margin: 18px 5px;
+      &-title {
+        font-size: 14px;
+      }
+      &-text {
+        font-size: 14px;
+      }
+    }
+  }
+  .consultation {
+    &__wrapper {
+      height: 330px;
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 0.88;
+    }
+    &__btn {
+      top: 152%;
+    }
+  }
+  .form {
+    flex-direction: column;
+    align-items: center;
+    &__input {
+      margin-top: 10px;
+      width: 80%;
+      font-size: 12px;
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+    &__policy {
+      top: 165px;
+      justify-content: center;
+      width: 80%;
+    }
+  }
+  .swiper {
+    &__img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  .swiper-slide {
+    min-height: 200px;
+  }
+  .swiper-button-prev {
+    display: none;
+  }
+  
+  .swiper-button-next {
+    display: none;
+  }
+  .footer {
+    &__logoText {
+      flex-direction: column;
+    }
+    &__logo {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    &__text {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    &__info {
+      flex-direction: column;
+    }
+    &__contakt {
+      margin-bottom: 10px;
+    }
+    &__phone {
+      margin: 0;
+    }
+    &__devider {
+      margin-top: 130px;
+    }
+    &__policy {
+      margin: 0;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      :nth-last-child(-n+3) {
+        margin-top: 10px;
+      }
     }
   }
 }
@@ -249,6 +379,15 @@
     }
     &__text {
       font-size: 12px;
+    }
+  }
+  .swiper {
+    padding: 30px 15px 0 15px;
+  }
+  .footer {
+
+    &__devider {
+      margin-top: 150px;
     }
   }
 }
