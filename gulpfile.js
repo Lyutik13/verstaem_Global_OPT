@@ -6,6 +6,7 @@ const autoprefixer = require("gulp-autoprefixer");
 const rename = require("gulp-rename");
 const htmlmin = require("gulp-htmlmin");
 const sourcemaps = require('gulp-sourcemaps');
+const webpack = require('webpack-stream');
 
 gulp.task("server", function () {
   browserSync({
@@ -38,7 +39,8 @@ gulp.task("styles", function () {
 gulp.task("watch", function () {
   gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
   gulp.watch("src/*.html").on("change", gulp.parallel("html"));
-  gulp.watch("src/js/**/*.js").on("change", gulp.parallel("scripts"));
+  // gulp.watch("src/js/**/*.js").on("change", gulp.parallel("scripts"));
+  gulp.watch("./src/js/**/*.js").on("change", gulp.parallel("webpack"));
   gulp.watch("src/fonts/**/*").on("all", gulp.parallel("fonts"));
   gulp.watch("src/icons/**/*").on("all", gulp.parallel("icons"));
   gulp.watch("src/img/**/*").on("all", gulp.parallel("images"));
@@ -53,10 +55,18 @@ gulp.task("html", function () {
     .pipe(gulp.dest("dist/"));
 });
 
-gulp.task("scripts", function () {
+// gulp.task("scripts", function () {
+//   return gulp
+//     .src("src/js/**/*.js")
+//     .pipe(gulp.dest("dist/js"))
+//     .pipe(browserSync.stream());
+// });
+
+gulp.task('webpack', function () {
   return gulp
-    .src("src/js/**/*.js")
-    .pipe(gulp.dest("dist/js"))
+    .src('src/js/script.js')
+    .pipe(webpack( require('./webpack.config') ))
+    .pipe(gulp.dest('dist/js/'))
     .pipe(browserSync.stream());
 });
 
@@ -102,7 +112,8 @@ gulp.task(
     "watch",
     "server",
     "styles",
-    "scripts",
+    "webpack",
+    // "scripts",
     "fonts",
     "icons",
     "html",

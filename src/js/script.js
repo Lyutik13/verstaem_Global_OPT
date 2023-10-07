@@ -1,182 +1,20 @@
-"use strict";
-document.addEventListener("DOMContentLoaded", function () {
-    //////////////////// hamburger ///////////////////
-    const hamburger = document.querySelector(".hamburger"),
-        menu = document.querySelector(".menu"),
-        closse = document.querySelector(".menu__close");
+'use strict'
 
-    hamburger.addEventListener("click", () => {
-        menu.classList.add("active");
-    });
+import hamburger from './modules/hamburger'
+import modal from './modules/modal'
+import form from './modules/form'
+import swiper from './modules/swiper'
+import timer from './modules/timer'
 
-    closse.addEventListener("click", () => {
-        menu.classList.remove("active");
-    });
-    // hamburger end
+window.addEventListener("DOMContentLoaded", () => {
+	hamburger()
+	modal()
+  form()
+  swiper()
+	timer('.timer', '2024-05-13')
 
-    ///////////////////// modal ///////////////////
-    const btnsModalTrigger = document.querySelectorAll("[data-modal]"),
-        modal = document.querySelector(".modal");
 
-    function openModal() {
-        modal.classList.add("show", "fade");
-        modal.classList.remove("hide");
-        document.body.style.overflow = "hidden";
-        //убираем повторное открытие модального окна
-        clearInterval(modalTimerId);
-    }
-
-    function closeModal() {
-        modal.classList.add("hide");
-        modal.classList.remove("show", "fade");
-        document.body.style.overflow = "";
-    }
-
-    btnsModalTrigger.forEach((btn) => {
-        btn.addEventListener("click", openModal);
-    });
-
-    modal.addEventListener("click", (e) => {
-        if (e.target === modal || e.target.getAttribute("data-close") == "") {
-            closeModal();
-        }
-    });
-
-    // события при нажатии на клавишу esc
-    document.addEventListener("keydown", (e) => {
-        if (e.code === "Escape" && modal.classList.contains("show")) {
-            closeModal();
-        }
-    });
-
-    // Открытие модального окна по таймеру ф-я setTimeout
-    const modalTimerId = setTimeout(openModal, 20000);
-
-    // Открытие модального окна после прокрутки страницы до конца
-    // высота клиентского окна + высота скрола >= всей высоте страницы
-    function showModalByScroll() {
-        if (
-            document.documentElement.clientHeight + window.scrollY >=
-            document.documentElement.scrollHeight
-        ) {
-            openModal();
-            window.removeEventListener("scroll", showModalByScroll);
-        }
-    }
-
-    window.addEventListener("scroll", showModalByScroll);
-
-    ///////////////////// form ///////////////////
-    const form = document.getElementById("form");
-    form.addEventListener("submit", formSend);
-
-    async function formSend(e) {
-        e.preventDefault();
-
-        let error = formValidate(form);
-
-        let formData = new FormData(form);
-
-        if (error === 0) {
-            form.classList.add("_sending");
-            let response = await fetch("sendmail.php", {
-                method: "POST",
-                body: formData,
-            });
-            if (response.ok) {
-                let result = await response.json();
-                alert(result.message);
-                form.reset();
-                form.classList.remove("_sending");
-            } else {
-                alert("Ошибка!");
-                form.classList.remove("_sending");
-            }
-        } else {
-            alert("Заполните обязательные поля");
-        }
-    }
-
-    function formValidate(form) {
-        let error = 0;
-        let formReq = document.querySelectorAll("._req");
-
-        for (let index = 0; index < formReq.length; index++) {
-            const input = formReq[index];
-            formRemoveError(input);
-
-            if (input.classList.contains("_email")) {
-                if (emailTest(input)) {
-                    formAddError(input);
-                    error++;
-                }
-            } else if (
-                input.getAttribute("type") === "checkbox" &&
-                input.checked === false
-            ) {
-                formAddError(input);
-                error++;
-            } else {
-                if (input.value === "") {
-                    formAddError(input);
-                    error++;
-                }
-            }
-        }
-        return error;
-    }
-    function formAddError(input) {
-        input.parentElement.classList.add("_error");
-        input.classList.add("_error");
-    }
-    function formRemoveError(input) {
-        input.parentElement.classList.remove("_error");
-        input.classList.remove("_error");
-    }
-    // фун-я тэста email
-    function emailTest(input) {
-        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
-            input.value
-        );
-    }
-
-    //////////////////// swiper start ///////////////////
-    var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        rewind: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-            rotate: 0,
-            stretch: -200,
-            depth: 500,
-            modifier: 1.4,
-            slideShadows: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-            delay: 8000,
-            disableOnInteraction: false,
-        },
-    });
-
-    var swiper = new Swiper(".promoSwiper", {
-        autoHeight: true,
-        rewind: true,
-        pagination: {
-            el: ".swiper-pagination",
-        },
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-    });
-    // swiper end
-});
+})
 
 /* Отправка данных на сервер
 function send(event, php) {

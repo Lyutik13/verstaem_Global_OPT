@@ -213,12 +213,13 @@
           <div class="swiper-pagination"></div>
         </div>
 
-        <button class="btn btn__long">Получить расчет</button>
+        <button data-modal class="btn btn__long">Получить расчет</button>
       </div>
       <!-- /.promo__wrapper -->
     </div>
   </section>
   <!-- /promo -->
+  
 
   <section id="advantage" class="advantage">
     <div class="container">
@@ -343,6 +344,44 @@
   </section>
   <!-- /advantage -->
 
+  <section class="questions">
+    <div class="container">
+      <div class="questions__wrapper">
+        <div class="questions__header">
+          <div class="questions__header-text">
+            Акция для новых клиентов!<br /><span>Мы ценим каждого клиента и предлагаем вам стать одним из
+              них на очень выгодных условиях. Каждому, кто закажет
+              доставку, будет предоставлена скидка.
+              <span>20%!</span></span>
+          </div>
+        </div>
+        <div class="questions__main">
+          <div class="questions__main-title">Осталось до конца акции:</div>
+          <div class="timer">
+            <div class="timer__block">
+                <span id="days">12</span>
+                дней
+            </div>
+            <div class="timer__block">
+                <span id="hours">20</span>
+                часов
+            </div>
+            <div class="timer__block">
+                <span id="minutes">56</span>
+                минут
+            </div>
+            <div class="timer__block">
+                <span id="seconds">20</span>
+                секунд
+            </div>
+        </div>
+          <!-- /questions__main -->
+        </div>
+        <!-- /questions__wrapper -->
+      </div>
+  </section>
+  <!-- /.questions -->
+
   <section id="about" class="about">
     <div class="container">
       <h2 class="title">Наша работа - больше чем просто доставка</h2>
@@ -434,7 +473,7 @@
               Морские перевозки грузов из Китая в Россию за 35 дней с
               прохождением таможни
             </div>
-            <button class="btn price__item-btn">Подробнее</button>
+            <button data-modal class="btn price__item-btn">Подробнее</button>
           </div>
         </div>
         <!-- /.price__item -->
@@ -450,7 +489,7 @@
               ЖД перевозки грузов из Китая в Россию от 2 недель с прохождением
               таможни
             </div>
-            <button class="btn price__item-btn">Подробнее</button>
+            <button data-modal class="btn price__item-btn">Подробнее</button>
           </div>
         </div>
         <!-- /.price__item -->
@@ -466,7 +505,7 @@
               Автоперевозки грузов из Китая в Россию от 2 недель с
               прохождением таможни
             </div>
-            <button class="btn price__item-btn">Подробнее</button>
+            <button data-modal class="btn price__item-btn">Подробнее</button>
           </div>
         </div>
         <!-- /.price__item -->
@@ -482,7 +521,7 @@
               Морские перевозки грузов из Китая в Россию за 35 дней с
               прохождением таможни
             </div>
-            <button class="btn price__item-btn">Подробнее</button>
+            <button data-modal class="btn price__item-btn">Подробнее</button>
           </div>
         </div>
         <!-- /.price__item -->
@@ -708,22 +747,6 @@
   </section>
   <!-- /.feedback -->
 
-  <section class="questions">
-    <div class="container">
-      <div class="questions__wrapper">
-        <div class="questions__header">
-          <div class="questions__header-text">
-            Остались вопросы?<br /><span>Напишите нам!</span>
-          </div>
-        </div>
-        <div class="questions__main">
-          <!-- /questions__main -->
-        </div>
-        <!-- /questions__wrapper -->
-      </div>
-  </section>
-  <!-- /.questions -->
-
   <section class="map">
     <script type="text/javascript" charset="utf-8" async
       src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A2fffd78cd39848a2cf3c0d6f1a51c64e6e23cd7a2527141b27f095ad6f07dea5&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false"></script>
@@ -752,7 +775,7 @@
       <div class="footer__devider"></div>
       <div class="footer__policy">
         <div>© 2023 lyutik13.ru</div>
-        <div><span><a href="#">Политика конфидециальности</a></span></div>
+        <!-- <div><span><a href="#">Политика конфидециальности</a></span></div> -->
         <div>Создание сайта: <span><a href="#">Лютиков Виктор</a></span></div>
       </div>
     </div>
@@ -776,7 +799,7 @@
   <!-- /.modal -->
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="js/bundle.js"></script>
 </body>
 
 </html>
